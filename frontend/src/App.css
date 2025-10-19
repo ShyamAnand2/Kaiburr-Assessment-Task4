@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.app-header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  padding: 0 48px;
+  height: auto;
+  line-height: normal;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-content {
+  padding: 24px 0;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.logo-icon {
+  font-size: 36px;
+  color: #ffd700;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.app-title {
+  color: #ffffff !important;
+  margin: 0 !important;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  margin-left: 52px;
+}
+
+.app-content {
+  padding: 32px 24px;
+  background: transparent;
+}
+
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-footer {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+}
+
+/* Card Enhancements */
+.ant-card {
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ant-card:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.ant-card-head {
+  border-bottom: 2px solid #f0f0f0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.ant-card-head-title {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.ant-card-extra .ant-btn {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ant-card-extra .ant-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+/* Table Styling */
+.ant-table {
+  background: transparent;
+}
+
+.ant-table-thead > tr > th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+
+.ant-table-tbody > tr {
+  transition: all 0.3s ease;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.ant-table-expanded-row > .ant-table-cell {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-left: 3px solid #667eea;
+}
+
+/* Button Styling */
+.ant-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  transform: translateY(-2px);
+}
+
+.ant-btn-dangerous {
+  transition: all 0.3s ease;
+}
+
+.ant-btn-dangerous:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.4);
+}
+
+/* Tag Styling */
+.ant-tag {
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-weight: 500;
+  border: none;
+}
+
+/* Input Styling */
+.ant-input-affix-wrapper {
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
+}
+
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Modal Styling */
+.ant-modal-content {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.ant-modal-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-bottom: none;
+}
+
+.ant-modal-title {
+  color: white;
+  font-weight: 600;
+}
+
+.ant-modal-close {
+  color: white;
+}
+
+.ant-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Message Styling */
+.ant-message-notice-content {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .content-container {
+    padding: 0 16px;
+  }
+  
+  .app-header {
+    padding: 0 24px;
+  }
+  
+  .app-content {
+    padding: 24px 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app-title {
+    font-size: 22px;
+  }
+  
+  .search-bar-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .search-bar-container .ant-input-search {
+    max-width: 100% !important;
+  }
+  
+  .search-bar-container .ant-btn {
+    width: 100%;
+  }
+  
+  .app-content {
+    padding: 20px 12px;
+  }
+  
+  .ant-card-head {
+    padding: 16px 20px;
+  }
+  
+  .ant-card-head-title {
+    font-size: 16px;
+  }
+  
+  /* Make buttons stack on mobile */
+  .ant-table-tbody .ant-space {
+    flex-direction: column;
+    gap: 8px !important;
+  }
+  
+  .ant-table-tbody .ant-space .ant-btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-header {
+    height: 64px;
+    padding: 0 16px;
+  }
+  
+  .app-title {
+    font-size: 18px;
+  }
+  
+  .ant-table-pagination {
+    padding: 16px !important;
+  }
+}
+
+/* Horizontal scroll for table on small screens */
+.ant-table-wrapper {
+  overflow-x: auto;
+}
+
+.ant-table {
+  min-width: 1000px;
+}
+
+/* Better scrollbar styling */
+.ant-table-body::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ant-table-body::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+.ant-table-body::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+.ant-table-body::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
