@@ -1,0 +1,58 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'frontend/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'frontend/**'
+
+jobs:
+  build-and-test:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: frontend
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build application
+      run: npm run build
+      env:
+        CI: false
+      
+    - name: Create production Dockerfile
+      run: |
+        cat > Dockerfile << 'EOF'
+        FROM nginx:alpine
+        COPY build/ /usr/share/nginx/html/
+        EXPOSE 80
+        CMD ["nginx", "-g", "daemon off;"]
+        EOF
+        
+    - name: Build Docker image
+      run: docker build -t task-manager-frontend:${{ github.sha }} .
+      
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: frontend-build-${{ github.sha }}
+        path: frontend/build/
+        retention-days: 5
