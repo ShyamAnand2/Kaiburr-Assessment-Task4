@@ -5,20 +5,16 @@ on:
     branches: [ main ]
     paths:
       - 'backend/**'
-  workflow_dispatch:
   pull_request:
     branches: [ main ]
     paths:
       - 'backend/**'
+  workflow_dispatch:
 
 jobs:
   build-and-test:
     name: Build Backend
     runs-on: ubuntu-latest
-    
-    defaults:
-      run:
-        working-directory: backend
     
     steps:
     - name: Checkout repository
@@ -30,22 +26,27 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        cache-dependency-path: 'backend/pom.xml'
         
     - name: Build with Maven
       run: mvn clean package -DskipTests
+      working-directory: ./backend
       
     - name: Run tests
       run: mvn test
+      working-directory: ./backend
       
     - name: Build Docker image
       run: docker build -t task-manager-backend:${{ github.sha }} .
+      working-directory: ./backend
       
     - name: List artifacts
       run: ls -la target/
+      working-directory: ./backend
       
     - name: Upload JAR artifact
       uses: actions/upload-artifact@v4
       with:
-        name: backend-jar-${{ github.sha }}
+        name: backend-jar
         path: backend/target/*.jar
         retention-days: 5
