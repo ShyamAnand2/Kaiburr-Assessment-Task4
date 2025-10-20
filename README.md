@@ -135,8 +135,7 @@ Screenshot of the Docker image build step in the workflow run, demonstrating suc
 ### 5. Final Workflow Success
 
 The full job status for a completed workflow run displaying all green checkmarks and overall pipeline success. I've run both Backend and Frontend CI/CD to show that the pushed codes indeed work from start to end.
-
-
+<img width="1918" height="1078" alt="Task-4-RECENT" src="https://github.com/user-attachments/assets/d2fa4c2d-acb5-4e97-bcf8-e87c2258093c" />
 
 ---
 
