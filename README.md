@@ -94,12 +94,66 @@ text
 3. View running/completed workflows
 4. Click on workflow for detailed logs
 
-## Pipeline Outputs
+## 📸 Screenshots: CI/CD Pipeline Proof
 
-- **JAR files** (backend)
-- **Build artifacts** (frontend)
-- **Docker images** tagged with commit SHA
-- **Test results** in workflow logs
+To validate my CI/CD pipeline implementation for Task Manager, the following screenshots are included, each demonstrating a key part of the process.  
+_All screenshots show the system datetime and my username as required._
+
+---
+
+### 1. Workflow File Presence
+
+Screenshot showing my pipeline YAML file (`.github/workflows/main.yml` or similar) present in my repository on GitHub.
+<img width="1918" height="1078" alt="Task-4-WORKFLOW" src="https://github.com/user-attachments/assets/cad63d4f-abed-4ab5-99ae-9c5834ce2f82" />
+
+---
+
+### 2. Actions Tab — Workflow Run List
+
+A view of the GitHub Actions “Actions” tab,
+displaying recent workflow runs, status icons (success/fail), and my repo context.
+<img width="1918" height="1078" alt="Task-4-ACTIONS" src="https://github.com/user-attachments/assets/d19c915d-352b-4698-a0d6-a40158d31382" />
+
+---
+
+### 3. Workflow Run Details — Build Steps
+
+Expanded screenshot of a workflow run showing the build job steps, including code compilation and test phases, with all successful jobs marked.
+
+#### For Backend CI/CD:
+1) In progress:
+<img width="1918" height="1078" alt="Task-4-INPROGRESSS" src="https://github.com/user-attachments/assets/54c95963-aab7-4dfa-8ace-fc3c114b2daf" />
+2) Completed:
+<img width="1918" height="1078" alt="Task-4-INPROGRESS-COMPLETE" src="https://github.com/user-attachments/assets/dc3edb99-dd58-4492-ab57-37652cbfae7f" />
+
+#### For Frontend CI/CD:
+1) In progress:
+<img width="1918" height="1078" alt="Task-4-INPROGRESS2" src="https://github.com/user-attachments/assets/be4cb511-2b68-4be0-9a77-31baa68764e9" />
+2) Completed:
+<img width="1918" height="1078" alt="Task-4-INPROGRESS2COMPLETE" src="https://github.com/user-attachments/assets/7d2787eb-7f35-4a9d-acda-90553c0fa20a" />
+
+---
+
+### 4. Docker Build Step Completion
+
+Screenshot of the Docker image build step in the workflow run, demonstrating successful container creation and completion.
+
+
+---
+
+### 5. Final Workflow Success
+
+The full job status for a completed workflow run displaying all green checkmarks and overall pipeline success.
+
+---
+
+### 6. [Optional] Docker Image in Registry
+
+If pushed to Docker Hub or GitHub Packages, a screenshot of the published image in my container registry.
+
+---
+
+Each screenshot is annotated with captions and included below for review.
 
 ## Technologies Used
 
