@@ -6,6 +6,7 @@
 This repository demonstrates CI/CD implementation for a full-stack Task Manager application using GitHub Actions. It includes automated build, test, and Docker image creation pipelines for both backend (Java/Spring Boot) and frontend (React/TypeScript).
 
 ## Repository Structure
+```
 Kaiburr-Assessment-Task4/
 ├── .github/
 │ └── workflows/
@@ -20,8 +21,7 @@ Kaiburr-Assessment-Task4/
 │ ├── package.json
 │ └── public/
 └── README.md
-
-text
+```
 
 ## Pipelines
 
@@ -78,15 +78,11 @@ git add backend/
 git commit -m "Update backend"
 git push origin main
 
-text
-
 ### Trigger Frontend Pipeline
 Make changes to frontend code
 git add frontend/
 git commit -m "Update frontend"
 git push origin main
-
-text
 
 ### View Pipeline Status
 1. Go to GitHub repository
@@ -94,22 +90,19 @@ text
 3. View running/completed workflows
 4. Click on workflow for detailed logs
 
-## 📸 Screenshots: CI/CD Pipeline Proof
-
+## Screenshots: CI/CD Pipeline Proof
 To validate my CI/CD pipeline implementation for Task Manager, the following screenshots are included, each demonstrating a key part of the process.  
 _All screenshots show the system datetime and my username as required._
 
 ---
 
 ### 1. Workflow File Presence
-
 Screenshot showing my pipeline YAML file (`.github/workflows/main.yml` or similar) present in my repository on GitHub.
 <img width="1918" height="1078" alt="Task-4-WORKFLOW" src="https://github.com/user-attachments/assets/cad63d4f-abed-4ab5-99ae-9c5834ce2f82" />
 
 ---
 
 ### 2. Actions Tab — Workflow Run List
-
 A view of the GitHub Actions “Actions” tab,
 displaying recent workflow runs, status icons (success/fail), and my repo context.
 <img width="1918" height="1078" alt="Task-4-ACTIONS" src="https://github.com/user-attachments/assets/d19c915d-352b-4698-a0d6-a40158d31382" />
@@ -117,7 +110,6 @@ displaying recent workflow runs, status icons (success/fail), and my repo contex
 ---
 
 ### 3. Workflow Run Details — Build Steps
-
 Expanded screenshot of a workflow run showing the build job steps, including code compilation and test phases, with all successful jobs marked.
 
 #### For Backend CI/CD:
@@ -135,25 +127,18 @@ Expanded screenshot of a workflow run showing the build job steps, including cod
 ---
 
 ### 4. Docker Build Step Completion
-
 Screenshot of the Docker image build step in the workflow run, demonstrating successful container creation and completion.
-
+<img width="1918" height="1078" alt="Task-4-BUILDDOCKER" src="https://github.com/user-attachments/assets/38721839-6477-48b2-ae96-58012cfceb0f" />
 
 ---
 
 ### 5. Final Workflow Success
 
-The full job status for a completed workflow run displaying all green checkmarks and overall pipeline success.
+The full job status for a completed workflow run displaying all green checkmarks and overall pipeline success. I've run both Backend and Frontend CI/CD to show that the pushed codes indeed work from start to end.
+
+
 
 ---
-
-### 6. [Optional] Docker Image in Registry
-
-If pushed to Docker Hub or GitHub Packages, a screenshot of the published image in my container registry.
-
----
-
-Each screenshot is annotated with captions and included below for review.
 
 ## Technologies Used
 
